@@ -28,7 +28,7 @@ pip install -r requirements.txt
 If you wish to regenerate the full dataset locally using the physical solvers:
 
 ```bash
-python src/physics_engine.py --output_dir ./data/full_dataset
+python src/physics_engine.py --output_dir ./link/to/your/folder/aerial_image_dataset
 
 ```
 
@@ -42,7 +42,7 @@ python src/train_unet.py --data_dir ./src/samples
 
 ```
 
-# To train on the full research dataset
+### To train on the full research dataset
 Download the dataset and extract it into a folder named *aerial_image_dataset*
 
 ```bash
