@@ -1,0 +1,17 @@
+# Core Scientific Computation
+numpy==1.26.4
+scipy==1.12.0
+
+# Deep Learning & Physics Surrogates
+torch==2.2.1
+torchvision==0.17.1
+
+# Model Exporting & Runtime
+onnx==1.15.0
+onnxruntime==1.17.1
+
+# Analytics & Plotting (Bossung Curves)
+matplotlib==3.8.3
+
+# Utilities
+tqdm==4.66.2
