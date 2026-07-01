@@ -1,6 +1,6 @@
 # Machine learning surrogate models
 
-This folder contains datasets and .py files to completely train and run the models for aerial image intensity & post development bake (PEB) stage
+This folder contains datasets and .py files to completely train and run the models for aerial image intensity & post development bake (PEB) stage.
 
 ## 1. Project Structure
 
