@@ -1,15 +1,14 @@
 # Litho-Digital-Twin: Semiconductor Photolithography Backend
 
-This repository contains the core physics-informed machine learning pipeline for the simulation of semiconductor lithography processes. It includes the physical modeling engines for spin-coating, soft-baking, DUV photon exposure, and chemically amplified resist (CAR) development, paired with a U-Net surrogate model for real-time inference.
+This folder contains datasets and .py files to completely train and run the models for aerial image intensity & post development bake (PEB) stage
 
 ## 1. Project Structure
 
-The repository is modularly organized to separate physical simulation logic from deep learning model training:
+The folder ./src is modularly organized to separate physical simulation logic from deep learning model training:
 
 * `src/physics_engine.py`: Contains the Hopkins-Abbe diffraction solver, reaction-diffusion PDE solvers for PEB, and the Mack Dissolution model.
 * `src/train_unet.py`: The PyTorch training pipeline for the U-Net surrogate models.
-* `src/inference_utils.py`: Utilities for ONNX model exporting and Unity-Sentis compatibility.
-* `data/samples/`: Contains a small subset of pre-computed tensors for architectural verification.
+* `src/samples/`: Contains a small subset of pre-computed tensors for architectural verification.
 
 ## 2. Getting Started
 
@@ -55,7 +54,7 @@ python src/train_unet.py --data_dir /path/to/your/aerial_image_dataset
 
 The complete research dataset, consisting of 500 aerial intensity maps and 500 corresponding post-exposure bake (PEB) polymer maps, is available for academic and research purposes:
 
-**[Download Full Dataset (Google Drive)](https://drive.google.com/drive/u/0/folders/1dLii0UoS4ciBFmqyp0dpmPiz6ZV4djaX)
+[Download Full Dataset (Google Drive)](https://drive.google.com/drive/u/0/folders/1dLii0UoS4ciBFmqyp0dpmPiz6ZV4djaX)
 
 ---
 
