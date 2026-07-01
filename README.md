@@ -102,13 +102,13 @@ Expanding the input tensor dimensionality to accept substrate layer definitions 
 ### 9. Project Creators & Contributors
 
 * **Nagendra Kudva** – *Process physics and Machine Learning model developement*  
-  B.Tech in Electronics and Communication Engineering, Manipal Institute of Technology. Designed and implemented the core physics-informed deep learning architecture, the continuous Mack dissolution kinetics engine, and the volumetric metrology pipeline.
+  B.Tech in ECE, Manipal Institute of Technology, Karnataka. Designed and implemented the core physics-informed deep learning architecture, the continuous Mack dissolution kinetics engine, and the volumetric metrology pipeline.
 
 * **Danny Joseph** – *Unity 3D modeling & Integration*  
-  [Institution Name]. Managed the C# bridging logic and real-time visualization deployment for the Unity-based interactive dashboard.
+  B.tech in CSE, Vellore Institute of Technology, Chennai. Managed the C# bridging logic and real-time visualization deployment for the Unity-based interactive dashboard.
 
 * **Tarun Kumar Agarwal** – *Project Advisor / Principal Investigator*  
-  [Institution Name, e.g., IIT Gandhinagar]. Provided domain expertise, guidance on sub-wavelength optical phenomena, and theoretical validation of the physical models.
+  Indian Institute Of Technology, Gandhinagar, India. Provided domain expertise, guidance on complete idea, building, supervising and theoretical validation of the physical models.
 
 ---
 
