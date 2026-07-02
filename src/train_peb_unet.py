@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-base_dir = "/kaggle/working/aerial_image_dataset"
+base_dir = "/path/to/your/folder/aerial_image_dataset"
 drive_root = base_dir
 DRIVE_ROOT = base_dir
 
