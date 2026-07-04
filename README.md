@@ -2,9 +2,9 @@
 
 This repository details the architecture and deployment of a physics-informed deep learning Digital Twin designed for sub-100nm 193nm Deep Ultraviolet (DUV) immersion lithography. By replacing computationally bottlenecked numerical partial differential equation (PDE) solvers with a synchronized, dual-stage Convolutional U-Net surrogate architecture, this platform achieves rapid spatial profile prediction, post-exposure bake (PEB) chemical kinetic mapping, and volumetric fluidic etching simulation while maintaining sub-nanometer critical dimension (CD) fidelity.
 
-Access for the complete digital twin deployed on itch.io [Click here](https://dannyjoseph.itch.io/photolithography)
+Access for the complete digital twin deployed on itch.io--> [Click here](https://dannyjoseph.itch.io/photolithography)
 
-Link to the repository for UNITY3D project and scripts [Click here]()
+Link to the repository for UNITY-3D project and scripts--> [Click here](https://github.com/DanNoby/vfab_photolithography)
 
 ## The Digital Twin Paradigm in Semiconductor Fabrication
 
