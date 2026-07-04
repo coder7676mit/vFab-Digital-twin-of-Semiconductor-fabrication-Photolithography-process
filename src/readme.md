@@ -64,9 +64,9 @@ python src/train_peb_unet.py
 
 ## 3. Dataset Access
 
-The complete research dataset, consisting of 500 aerial intensity maps, is available for academic and research purposes:
+The simulation datasets used to train these models are hosted on Hugging Face. They contain the 512x512 physical layout masks, optical conditions, and the resulting physics targets (Aerial Intensity and PEB Chemical Distribution).
 
-[Download Full Dataset (Google Drive)](https://drive.google.com/drive/u/0/folders/1dLii0UoS4ciBFmqyp0dpmPiz6ZV4djaX)
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nk-21-mit/vFab-1.0-Photolithography-ML-surrogate-Tensor-Dataset)
 
 ---
 
