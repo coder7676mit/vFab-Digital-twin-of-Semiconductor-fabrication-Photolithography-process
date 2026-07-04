@@ -45,7 +45,7 @@ Where $K_{AMP}$ is the amplification kinetic multiplier ($0.22$), determining th
 ## 2. Numerical Implementation & Solver Stability
 
 <!-- INSERT IMAGE HERE: Explicit Euler Finite-Difference Scheme Flowchart -->
-<!-- Example: ![Explicit Euler Solver](../Images/euler_solver.png) -->
+![Explicit Euler Solver](../Images/num.png)
 
 The system natively solves these non-linear reaction-diffusion PDEs using an Explicit Forward Euler finite-difference method. The architecture applies a 5-point spatial Laplacian stencil and zero-flux padding at the simulation boundaries to maintain chemical mass conservation.
 
@@ -56,7 +56,7 @@ The system natively solves these non-linear reaction-diffusion PDEs using an Exp
 To bypass the computational overhead of solving 150 temporal finite-difference iterations per sample, a Physics-Informed U-Net acts as a fast surrogate model. It predicts the final steady-state $M(x,y)$ matrix directly from the intensity and dose inputs in a single forward pass.
 
 <!-- INSERT IMAGE HERE: Deep Physics-Informed U-Net Architecture Diagram -->
-<!-- Example: ![U-Net Architecture](../Images/unet_architecture.png) -->
+![U-Net Architecture](../Images/unet.png)
 
 **Optimization and Training Loop:**
 The model parameters are optimized by minimizing the Mean Squared Error (MSE) loss function using the Adam optimizer:
@@ -104,7 +104,7 @@ $$M_{binary}(x,y) = \begin{cases} 1, & \text{if } h_{final}(x,y) > 0.0 \\ 0, & \
 ## 5. Automated Data Analysis & Metrology Architecture
 
 <!-- INSERT IMAGE HERE: Integrated Lithography Development & Metrology Methodology Diagram -->
-<!-- Example: ![Metrology Pipeline](../Images/metrology_pipeline.png) -->
+![Metrology Pipeline](../Images/cd.png)
 
 **1. Critical Dimension (CD) Metrology**
 A pixel-counting algorithm analyzes the binary thresholded wafer map, converting continuous runs into line and trench Critical Dimensions by multiplying the lengths by the grid pitch ($3.9 \text{ nm}$).
