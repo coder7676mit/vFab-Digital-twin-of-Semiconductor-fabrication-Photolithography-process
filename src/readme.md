@@ -74,4 +74,4 @@ The simulation datasets used to train these models are hosted on Hugging Face. T
 
 This digital twin architecture was developed as part of research into semiconductor process intelligence. The methodologies implemented, including the Hopkins-Abbe TCC formulation and Mack Dissolution kinetics, adhere to standard industry process characterization benchmarks.
 
-*Frontend Visualization:* The Unity-based dashboard and interactive runtime environment for this backend are hosted in a separate repository [Link to Unity Repo](https://dannyjoseph.itch.io/photolithography).
+*Frontend Visualization:* The Unity-based dashboard and interactive runtime environment for this backend are hosted in a separate repository [Link to Unity Repo](https://github.com/DanNoby/vfab_photolithography).
