@@ -47,8 +47,6 @@ class StandardLithoDataset(Dataset):
 
         return torch.tensor(y_aerial), torch.tensor(dose_map)
 
-train_loader = DataLoader(StandardLithoDataset(DRIVE_ROOT), batch_size=4, shuffle=True, drop_last=True)
-
 # =====================================================================
 # 2. BALANCED 2D PHYSICS SOLVER
 # =====================================================================
@@ -154,34 +152,38 @@ class StandardChemicalUNet(nn.Module):
 # =====================================================================
 # 5. EXECUTE GRADIENT FINE-TUNING SWEEP
 # =====================================================================
-model_chem = StandardChemicalUNet().to(device)
-optimizer_chem = torch.optim.AdamW(model_chem.parameters(), lr=1e-3, weight_decay=1e-4)
+if __name__ == "__main__":
+    # 1. Initialize the DataLoader inside the main block
+    train_loader = DataLoader(StandardLithoDataset(DRIVE_ROOT), batch_size=4, shuffle=True, drop_last=True)
 
-TOTAL_EPOCHS = 10
-criterion = EdgeWeightedMSELoss(edge_weight=5.0)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer_chem, T_max=TOTAL_EPOCHS, eta_min=1e-5)
+    model_chem = StandardChemicalUNet().to(device)
+    optimizer_chem = torch.optim.AdamW(model_chem.parameters(), lr=1e-3, weight_decay=1e-4)
 
-print("🚀 Starting Fine-Tuned 2-Channel Chemical U-Net Training...")
-print("-" * 60)
+    TOTAL_EPOCHS = 10
+    criterion = EdgeWeightedMSELoss(edge_weight=5.0)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer_chem, T_max=TOTAL_EPOCHS, eta_min=1e-5)
 
-for epoch in range(TOTAL_EPOCHS):
-    model_chem.train()
-    total_loss = 0.0
-    for intensity, dose in train_loader:
-        intensity, dose = intensity.to(device), dose.to(device)
+    print("🚀 Starting Fine-Tuned 2-Channel Chemical U-Net Training...")
+    print("-" * 60)
 
-        with torch.no_grad():
-            target_M = compute_standard_peb_target(intensity, dose)
+    for epoch in range(TOTAL_EPOCHS):
+        model_chem.train()
+        total_loss = 0.0
+        for intensity, dose in train_loader:
+            intensity, dose = intensity.to(device), dose.to(device)
 
-        optimizer_chem.zero_grad()
-        chem_input = torch.cat([intensity, dose], dim=1)
+            with torch.no_grad():
+                target_M = compute_standard_peb_target(intensity, dose)
 
-        preds = model_chem(chem_input)
-        loss = criterion(preds, target_M)
-        loss.backward()
-        optimizer_chem.step()
-        total_loss += loss.item()
+            optimizer_chem.zero_grad()
+            chem_input = torch.cat([intensity, dose], dim=1)
 
-    current_lr = optimizer_chem.param_groups[0]['lr']
-    scheduler.step()
-    print(f"✨ Epoch [{epoch+1:02d}/{TOTAL_EPOCHS:02d}] | LR: {current_lr:.6f} | Loss: {total_loss/len(train_loader):.6f}")
+            preds = model_chem(chem_input)
+            loss = criterion(preds, target_M)
+            loss.backward()
+            optimizer_chem.step()
+            total_loss += loss.item()
+
+        current_lr = optimizer_chem.param_groups[0]['lr']
+        scheduler.step()
+        print(f"✨ Epoch [{epoch+1:02d}/{TOTAL_EPOCHS:02d}] | LR: {current_lr:.6f} | Loss: {total_loss/len(train_loader):.6f}")
