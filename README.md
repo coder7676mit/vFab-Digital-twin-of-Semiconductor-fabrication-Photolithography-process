@@ -27,6 +27,7 @@ pip install huggingface_hub
 # Download the specific folders you need
 huggingface-cli download nk-21-mit/vFab-1.0-Photolithography-ML-surrogate-Tensor-Dataset --repo-type dataset --local-dir ./data
 
+```
 ---
 
 ## 🔬 System Resolution & Pattern Capabilities
