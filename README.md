@@ -12,6 +12,23 @@ This project demonstrates how deep neural networks can function as highly accura
 
 ---
 
+## 💾 Dataset
+
+The simulation datasets used to train these models are hosted on Hugging Face. They contain the 512x512 physical layout masks, optical conditions, and the resulting physics targets (Aerial Intensity and PEB Chemical Distribution).
+
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nk-21-mit/vFab-1.0-Photolithography-ML-surrogate-Tensor-Dataset)
+
+### Downloading the Data
+You can download the arrays directly into your environment using the Hugging Face Hub CLI:
+
+```bash
+pip install huggingface_hub
+
+# Download the specific folders you need
+huggingface-cli download nk-21-mit/vFab-1.0-Photolithography-ML-surrogate-Tensor-Dataset --repo-type dataset --local-dir ./data
+
+---
+
 ## 🔬 System Resolution & Pattern Capabilities
 * **Target Resolution Nodes:** Sub-100nm critical dimensions (CD), capturing structural limits from $40\text{ nm}$ up to $150\text{ nm}$ feature sizes.
 * **Supported Layout Topologies:** 
