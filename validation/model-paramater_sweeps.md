@@ -25,6 +25,7 @@ To ensure the neural network surrogate mathematically aligns with textbook litho
 **CD Validation Plots**
 ![CD vs Dose and Dev Time](../Images/cd_dose.png)
 
+
 ![CD vs Dose and Dev Time](../Images/cd_dev.png)
 
 ---
