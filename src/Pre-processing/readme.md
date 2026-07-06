@@ -22,7 +22,7 @@ This script trains a Split Neural Network to map complex solvent diffusion and g
 * **Architecture:** Split Neural Network (Shared base with diverging output heads to prevent layout corruption in Unity).
 * **Export:** Generates `lumped_softbake.onnx`  for the Unity `HotplateController.cs` inference engine.
 
-## 🚀 Execution & Export Workflow
+## Execution & Export Workflow
 
 To train these models locally and generate the required weights, ensure you have the required dependencies installed (see main repository requirements).
 
